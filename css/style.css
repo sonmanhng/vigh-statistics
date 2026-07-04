@@ -1,0 +1,351 @@
+/* =========================================
+   TOKENS (sonmanhng.github.io style)
+   ========================================= */
+:root {
+    --white: #ffffff;
+    --bg: #ffffff;
+    --black: #111111;
+    --text: #222222;
+    --muted: #777777;
+    --rule: #e5e5e5;
+    --accent: #4338CA; /* indigo */
+
+    --f: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================
+   BASE
+   ========================================= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--f);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: var(--accent);
+    color: #fff;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* =========================================
+   NAV
+   ========================================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+
+.nav-brand:hover {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s var(--ease);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* =========================================
+   LAYOUT
+   ========================================= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 2rem 4rem 2rem;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+h1, h2, h3, h4 {
+    font-family: var(--f);
+    color: var(--black);
+}
+
+.hero-section {
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: var(--black);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.accent-line {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 1.5rem 0;
+}
+
+.hero-intro {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    max-width: 100%;
+}
+
+h3.section-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+/* =========================================
+   SIDE COLUMN (INFO, STAFF, ANNOUNCE)
+   ========================================= */
+.info-section {
+    margin-bottom: 3rem;
+}
+
+.info-list {
+    list-style: none;
+    font-size: 0.95rem;
+}
+
+.info-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.info-list strong {
+    color: var(--black);
+    font-weight: 500;
+    margin-right: 0.25rem;
+}
+
+.staff-card {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.staff-role {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.staff-name {
+    font-weight: 600;
+    color: var(--black);
+}
+
+.announcement-item {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.announce-date {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* =========================================
+   SYLLABUS (MODULE LIST)
+   ========================================= */
+.module-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.module-item {
+    border-left: 2px solid var(--rule);
+    padding-left: 1.5rem;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+.module-item:hover {
+    border-left-color: var(--accent);
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.module-title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--black);
+    margin: 0;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-published {
+    background-color: rgba(67, 56, 202, 0.1);
+    color: var(--accent);
+}
+
+.status-draft {
+    background-color: var(--rule);
+    color: var(--muted);
+}
+
+.module-desc {
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   RESOURCES
+   ========================================= */
+.resources-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.2s var(--ease);
+}
+
+.resource-link:hover {
+    color: var(--accent);
+}
+
+.resource-icon {
+    width: 14px;
+    height: 14px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   REVEAL ANIMATION
+   ========================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+.reveal.reveal-active {
+    opacity: 1;
+    transform: none;
+}

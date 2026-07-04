@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa học Thống kê - VIGH</title>
+    <!-- Font chuẩn của sonmanhng.github.io -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Statistics Course</a>
+            <div class="nav-links">
+                <a href="https://www.sonnm.site" target="_blank">Son Nguyen ↗</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <!-- Header Khóa học -->
+            <section class="reveal reveal-active hero-section">
+                <h1 id="site-title">Đang tải...</h1>
+                <h2 id="site-subtitle" class="hero-subtitle">Vui lòng đợi giây lát</h2>
+                <div class="accent-line"></div>
+                <p class="hero-intro" id="site-desc"></p>
+            </section>
+
+            <div class="grid-layout">
+                <!-- Cột trái: Thông tin & Thông báo -->
+                <div class="side-col">
+                    <section class="reveal reveal-active info-section">
+                        <h3 class="section-title">Course Info</h3>
+                        <ul class="info-list" id="course-info-list">
+                            <!-- JS render -->
+                        </ul>
+                    </section>
+
+                    <section class="reveal reveal-active info-section">
+                        <h3 class="section-title">Staff</h3>
+                        <div id="staff-list">
+                            <!-- JS render -->
+                        </div>
+                    </section>
+
+                    <section class="reveal reveal-active info-section">
+                        <h3 class="section-title">Announcements</h3>
+                        <div class="announcement-list" id="announcement-list">
+                            <!-- JS render -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Cột phải: Syllabus -->
+                <div class="main-col">
+                    <section class="reveal reveal-active">
+                        <h3 class="section-title">Syllabus & Materials</h3>
+                        <div class="module-list" id="module-container">
+                            <!-- JS render danh sách bài giảng tại đây -->
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Viện Nghiên cứu Hệ gen (VIGH). Giảng viên: <span id="footer-instructor"></span></p>
+        </div>
+    </footer>
+
+    <script src="./data/course-data.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
